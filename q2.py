@@ -65,7 +65,13 @@ def compressed_stack_length(lst):
         0
     """
     # TODO: Implement your solution here
-    pass
+    result = []
+    for num in lst:
+        if  result and result [-1] == num:
+            result.pop()
+        else:
+            result.append(num)
+    return len(result)
 
 
 if __name__ == "__main__":
@@ -73,3 +79,4 @@ if __name__ == "__main__":
     print(compressed_stack_length([1, 2, 2, 3]))    # Should print: 2
     print(compressed_stack_length([4, 4, 4, 4]))    # Should print: 0
     print(compressed_stack_length([]))              # Should print: 0
+
