@@ -52,7 +52,15 @@ def first_stable_character(s):
         None
     """
     # TODO: Implement your solution here
-    pass
+    for i in range(len(s)):
+        char = s[i]
+        count = s.count(char)
+        if count >= 2:
+            first_index = s.find(char)
+            last_index = s.rfind(char)
+            if last_index - first_index + 1 == count:
+                return char
+    return None
 
 
 if __name__ == "__main__":
@@ -60,3 +68,4 @@ if __name__ == "__main__":
     print(first_stable_character("abccba"))  # Should print: c
     print(first_stable_character("abc"))     # Should print: None
     print(first_stable_character("a"))       # Should print: None
+
